@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+body{
+    background: url("./public/images/foodd.jpg");
+    width: 100%;
+    height: 108vh;
+
+}
+.box{
+    border: 2px solid white;
+    background-color: rgb(31, 53, 9);
+    color: black;
+margin: 200px;
+    padding: 10px;
+    width: 600px;
+    height: auto;
+
+   
+}
+h2{
+    text-align: center;
+    color: rgb(248, 246, 234);
+    background: rgb(16, 190, 10);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.hero{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+    </style>
+<script>
+    function addclick(){
+        let task=document.getElementById("task").value;
+        let task2 = task;
+        document.getElementById("demo").innerHTML +=`${task2}` + "<br>";
+    }
+    function deleteclick(){
+        document.getElementById("demo").innerHTML = "";
+
+    }
+       function clearclick(){
+            document.getElementById("task").value = "";
+        }
+    addclick();
+    deleteclick();
+    clearclick();
+</script>
+</head>
+<body>
+    <div class="container-fluid">
+<div class="hero">
+        <div class="box">
+            <h2>Todo list</h2>
+            <input type="text"   name="Entername" id="task" placeholder="Enter your name">
+            <span>
+                <button onclick="addclick()" class="btn btn-success"><i class="bi bi-plus-circle-fill"></i>&nbsp;Add</button>
+                <button onclick="deleteclick()"  class="btn btn-danger"><i class="bi bi-trash3"></i>&nbsp;Remove</button>
+                <button onclick="clearclick()" class="btn btn-primary"><i class="bi bi-eraser"></i>&nbsp;clear</button>
+            </span>
+            <hr>
+            <p id="demo"></p>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
